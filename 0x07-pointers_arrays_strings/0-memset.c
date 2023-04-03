@@ -4,13 +4,13 @@
   * @b: constant byte
   * @s: pointer
   * @n: numbers of bytes
-  * Return: pointer
+  * Return: pointer, s, with new value
   */
 char *_memset(char *s, char b, unsigned int n)
 {
 	int j = 0;
 
-	for (; j > 0; j++)
+	for (; n > 0; j++)
 	{
 		s[j] = b;
 		n--;
