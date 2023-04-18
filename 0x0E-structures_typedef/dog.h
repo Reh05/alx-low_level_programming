@@ -16,14 +16,14 @@ struct dog
 };
 
 /**
-  * dog_g - typedef of struct dog
+  * dog_t - typedef of struct dog
   */
-typedef struct dog dog_g;
+typedef struct dog dog_t;
 
-void init_dog(struct dog *f, char *name, float age, char *owner);
-void print dog(struct dog *f);
-dog_g *new_dog(char *name, float age, char *owner);
-void free_dog(dog_g *f);
+void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
+dog_t *new_dog(char *name, float age, char *owner);
+void free_dog(dog_t *d);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
 
