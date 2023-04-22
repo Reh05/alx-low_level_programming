@@ -1,28 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
 #include "main.h"
-/**
-  * check_num - checks if they're numbers
-  * @str: string array
-  * Return: always 0
-  */
-int check_num(char *str)
-{
-	unsigned int i;
-
-	i = 0;
-	while (i < strlen(str))
-	{
-		if (!isdigit(str[i]))
-		{
-			return (0);
-		}
-		i++;
-	}
-}
-
 /**
  * main - display the name of the program
  * @argc: Count arguments
@@ -31,28 +9,28 @@ int check_num(char *str)
  */
 int main(int argc, char *argv[])
 {
-	int i;
-	int str_to_int;
-	int sum = 0;
+	int j, num, sum = 0;
 
-	i = 0;
-
-	while (i < argc)
+	if (argc == 1)
 	{
-		if (check_num(argv[i]))
-		{
-			str_to_int = atoi(argv[i]);
-			sum += str_to_int;
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
-			i++;
-		}
-		printf("%d\n", sum);
-
+		printf("0\n");
 		return (0);
-		}
 	}
+	for (j = 1; j < argc; j++)
+	{
+		num = atoi(argv[j]);
+		if (num == 0 && argv[j][0] != '0')
+		{
+			printf("Error\n");
+			return (1);
+		}
+		if (num < 0)
+		{
+			printf("Error\n");
+			return (1);
+		}
+		sum += num;
+	}
+	printf("%d\n", sum);
+	return (0);
 }
