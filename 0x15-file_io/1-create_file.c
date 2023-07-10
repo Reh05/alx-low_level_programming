@@ -12,9 +12,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int jk;
-
-	jk = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 06);
+	int jk = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
 	if (jk == -1 || filename == NULL)
 		return (-1);
